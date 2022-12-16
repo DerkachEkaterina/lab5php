@@ -16,7 +16,7 @@ app:
     volumes:
       - ./src/public:/var/www
     environment:
-      MYSQL_ROOT_PASSWORD: test123
+      MYSQL_ROOT_PASSWORD: test
     ports:
       - '6606:3306'
 

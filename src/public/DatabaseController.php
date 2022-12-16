@@ -1,12 +1,12 @@
 <?php
 
-class dbController
+class DatabaseController
 {
     private mysqli $db;
 
-    public function connect()
+    public function connectDatabase()
     {
-        $this->db = new mysqli('db', 'root', 'test123', 'web');
+        $this->db = new mysqli('db', 'root', 'test', 'web');
     }
 
     public function createTable()
@@ -21,7 +21,7 @@ class dbController
         $this->db->query($sql);
     }
 
-    public function add($titles, $name, $desc, $email)
+    public function setAdvert($titles, $name, $desc, $email)
     {
         $sql = "INSERT INTO adverts(titles, name, description, email) VALUES(
             '{$titles}',
@@ -32,7 +32,7 @@ class dbController
         $this->db->query($sql);
     }
 
-    public function get()
+    public function getAdvert()
     {
         $sql = "SELECT * FROM adverts";
         $result = $this->db->query($sql);
